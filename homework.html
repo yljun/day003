@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+// 1. 编写一个函数，获得一个十六进制的随机颜色的字符串(例如：#20CD4F)
+// 	var str1=[];
+// 	var str2=[];
+// 	var num;
+// 	var a=[];
+// 	for(var i=48;i<=57;i++){
+// 		str1.push(i)
+// 	}
+// 	for(var i=65;i<=70;i++){
+// 		str1.push(i)
+// 	}
+// 	console.log(str1)
+
+// for(var i=0;i<6;i++){
+// 	var rand=Math.floor(Math.random()*16);
+// 	// str3[i]=str1[rand]
+// 	// str2.push(rand);
+// 	num=str1[rand];
+// 	var ch= String.fromCharCode(num);
+// 	a.push(ch);
+// }
+// a=a.join("")
+// console.log(a)
+
+
+
+// 2. 以下是某班级一次考试的成绩表。请计算每个学生总成绩，并按总成绩排名。统计各单科成绩第一名，输出其成绩与学号。
+// 	学号	语文	数学	英语	总成绩	备注
+// 	1		105		62		118		
+// 	2		89		78		120		
+// 	3		86		64		80		
+// 	4		78		99		91		
+// 	5		107		97		70		
+// 	6		112		61		92		
+// 	7		101		79		104		
+// 	8		71		72		105		
+// 	9		56		68		61		
+// 	10		98		83		77		
+
+
+ 	
+var sum=0;
+var scorse=[];
+var scor=[105,62,118,89,78,120,86,64,80,78,99,91,107,97,70,112,61,92,101,79,104,71,72,105,56,68,61,98,83,77];
+// var arr1=[105,62,118],
+// 	arr2=[89,78,120],
+// 	arr3=[86,64,80],
+// 	arr4=[78,99,91],
+// 	arr5=[107,97,70],
+// 	arr6=[112,61,92],
+// 	arr7=[101,79,104],
+// 	arr8=[71,72,105],
+// 	arr9=[56,68,61],
+// 	arr10=[98,83,77];
+for(var i=0,str=0,end=3;end<=30;i++,end+=3,str+=3){
+	scorse[i]=scor.slice(str,end).reduce(function(a,b){return a+b});}
+	console.log(scorse);
+	scorse.sort(compare);
+	function compare(a, b){
+			return b-a;
+		}
+console.log(scorse);
+
+var chanise=[];
+for(var i=0;i<30;){
+	chanise.push(scor[i]);
+	i=i+3;
+}
+chanise.sort(compare);
+console.log(chanise);
+
+var match=[];
+for(var i=1;i<30;){
+	match.push(scor[i]);
+	i=i+3;
+}
+ match.sort(compare);
+console.log( match);
+
+
+var english=[];
+for(var i=2;i<30;){
+	 english.push(scor[i]);
+	i=i+3;
+}
+  english.sort(compare);
+console.log(english);
+
+
+	</script>
+
+</body>
+</html>
